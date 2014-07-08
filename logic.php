@@ -40,7 +40,7 @@ function getPassword($inputString)
 
 }
 
-function randomWords($numWords)
+function randomWords($numWords, $inputString)
 {
 	global $words;
 	for($i = 0; $i < $numWords; $i++)
@@ -51,13 +51,25 @@ function randomWords($numWords)
 			echo "-";
 		}
 	}
+	if(array_key_exists("addNumber", $inputString))
+	{
+		echo rand(0, 9);
+	}	
+	if(array_key_exists("addSymbol", $inputString))
+	{
+		echo "";
+	}	
+	if(array_key_exists("addCapitalLetter", $inputString))
+	{
+		echo "";
+	}	
 }
 
 function testValues($inputString, $justWords=false)
 {
 	if($justWords)
 	{
-		if(array_key_exists("numberOfWords", $_POST))
+		if(array_key_exists("numberOfWords", $_POST) && ($_POST["numberOfWords"] != ""))
 		{
 			return $_POST["numberOfWords"];
 		}
@@ -74,16 +86,24 @@ function testValues($inputString, $justWords=false)
 		}	
 		if(array_key_exists("addNumber", $_POST))
 		{
-			echo "add a number: ".$_POST["numberOfWords"]."<br>";
+			echo "add a number: ".$_POST["addNumber"]."<br>";
 		}	
 		if(array_key_exists("addSymbol", $_POST))
 		{
-			echo "add a symbol: ".$_POST["numberOfWords"]."<br>";
+			echo "add a symbol: ".$_POST["addSymbol"]."<br>";
 		}	
 		if(array_key_exists("addCapitalLetter", $_POST))
 		{
-			echo "add a cap letter: ".$_POST["numberOfWords"]."<br>";
+			echo "add a cap letter: ".$_POST["addCapitalLetter"]."<br>";
 		}	
+	}
+}
+
+function checked($inputString, $whichBox)
+{
+	if(array_key_exists($whichBox, $inputString) && ($inputString[$whichBox] == "on"))
+	{
+		echo "checked";
 	}
 }
 

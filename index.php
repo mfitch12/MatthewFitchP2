@@ -24,7 +24,7 @@
       </div>
 
       <div class="jumbotron">
-        <h2 class = "randomWords"><?php randomWords($_POST["numberOfWords"])?></h2>
+        <h2 class = "randomWords"><?php randomWords($_POST["numberOfWords"], $_POST)?></h2>
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">New Password</a></p>
       </div>
@@ -38,17 +38,17 @@
 
 		  <div class="checkbox">
 		    <label>
-		      <input type="checkbox" name = "addNumber"> Add a number
+		      <input type="checkbox" name = "addNumber" <?checked($_POST, "addNumber")?> > Add a number
 		    </label>
 		  </div>
 		  <div class="checkbox">
 		    <label>
-		      <input type="checkbox" name = "addSymbol"> Add a symbol
+		      <input type="checkbox" name = "addSymbol"<?checked($_POST, "addSymbol")?> > Add a symbol
 		    </label>
 		  </div>
 		  <div class="checkbox">
 		    <label>
-		      <input type="checkbox" name = "addCapitalLetter"> Start with a capital letter
+		      <input type="checkbox" name = "addCapitalLetter"<?checked($_POST, "addCapitalLetter")?> > Start with a capital letter
 		    </label>
 		  </div>
 		  <button type="submit" class="btn btn-success">Submit</button>
