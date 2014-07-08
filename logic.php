@@ -6,6 +6,15 @@ $lines = array();
 //initiate second array
 $words = array();
 
+$symbols = Array(
+    '@',
+    '#',
+    '$',
+    '%',
+    '&',
+    '*'
+    );
+
 $num1 = 1;
 $num2 = 2;
 
@@ -43,6 +52,7 @@ function getPassword($inputString)
 function randomWords($numWords, $inputString)
 {
 	global $words;
+	global $symbols;
 	for($i = 0; $i < $numWords; $i++)
 	{
 		echo trim($words[rand(0, (count($words) - 1))]);	
@@ -57,7 +67,7 @@ function randomWords($numWords, $inputString)
 	}	
 	if(array_key_exists("addSymbol", $inputString))
 	{
-		echo "";
+		echo $symbols[rand(0, 5)];
 	}	
 	if(array_key_exists("addCapitalLetter", $inputString))
 	{
