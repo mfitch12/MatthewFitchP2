@@ -12,7 +12,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
-        
   </head>
 
   <body>
@@ -54,7 +53,20 @@
 		</form>
 
       <div class="footer">
-        <p><? echo $_POST["numberOfWords"] ?> </p>
+        <p>	
+        	<? 
+        		if(array_key_exists("numberOfWords", $_POST))
+        		{
+        			echo $_POST["numberOfWords"] ;
+        		}
+        	?> 
+        	<br>
+        	<? echo $_POST["addNumber"] ?> 
+        	<br>
+        	<? echo $_POST["addSymbol"] ?> 
+        	<br>
+        	<? echo $_POST["addCapitalLetter"] ?> 
+        </p>
       </div>
 
     </div> <!-- /container -->
