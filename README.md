@@ -1,7 +1,7 @@
 # P2 - Matthew Fitch
 
 ## Live URL
-
+http://p2-mfitch.rhcloud.com/
 
 ## Description
 Project 2. A secure password generator based on the XKCD comic.
