@@ -12,6 +12,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <? $_POST["numberOfWords"] = testValues($_POST, true) ?>
+
   </head>
 
   <body>
@@ -31,7 +33,7 @@
 		  
 		  <div class="form-group">
 		    <label for="numberOfWords"># of words</label>
-		    <input maxlength=1 type="text" name = "numberOfWords" value = "" id="numWords"> (Max 9)
+		    <input maxlength=1 type="text" name = "numberOfWords" value = <? echo $_POST["numberOfWords"] ?> id="numWords"> (Max 9)
 		  </div>
 
 		  <div class="checkbox">
@@ -55,17 +57,9 @@
       <div class="footer">
         <p>	
         	<? 
-        		if(array_key_exists("numberOfWords", $_POST))
-        		{
-        			echo $_POST["numberOfWords"] ;
-        		}
+        		testValues($_POST);
         	?> 
-        	<br>
-        	<? echo $_POST["addNumber"] ?> 
-        	<br>
-        	<? echo $_POST["addSymbol"] ?> 
-        	<br>
-        	<? echo $_POST["addCapitalLetter"] ?> 
+
         </p>
       </div>
 

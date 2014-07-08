@@ -37,7 +37,7 @@ foreach ($words as $word_num => $word)
 
 function getPassword($inputString)
 {
-	
+
 }
 
 function randomWords($numWords)
@@ -50,6 +50,40 @@ function randomWords($numWords)
 		{
 			echo "-";
 		}
+	}
+}
+
+function testValues($inputString, $justWords=false)
+{
+	if($justWords)
+	{
+		if(array_key_exists("numberOfWords", $_POST))
+		{
+			return $_POST["numberOfWords"];
+		}
+		else
+		{
+			return "3";
+		}
+	}
+	else
+	{
+		if(array_key_exists("numberOfWords", $_POST))
+		{
+			echo "number of words: ".$_POST["numberOfWords"]."<br>";
+		}	
+		if(array_key_exists("addNumber", $_POST))
+		{
+			echo "add a number: ".$_POST["numberOfWords"]."<br>";
+		}	
+		if(array_key_exists("addSymbol", $_POST))
+		{
+			echo "add a symbol: ".$_POST["numberOfWords"]."<br>";
+		}	
+		if(array_key_exists("addCapitalLetter", $_POST))
+		{
+			echo "add a cap letter: ".$_POST["numberOfWords"]."<br>";
+		}	
 	}
 }
 
