@@ -25,8 +25,8 @@
 
       <div class="jumbotron">
         <h2 class = "randomWords"><?php randomWords($_POST["numberOfWords"], $_POST)?></h2>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">New Password</a></p>
+        <p class="lead">Fill out the options below and click "Get new password" to generate a new XKCD password.</p>
+        
       </div>
 
 		<form role="form" method="post" action="index.php">
@@ -51,7 +51,7 @@
 		      <input type="checkbox" name = "addCapitalLetter"<?checked($_POST, "addCapitalLetter")?> > Start with a capital letter
 		    </label>
 		  </div>
-		  <button type="submit" class="btn btn-success">Submit</button>
+		  <button type="submit" class="btn btn-success">Get new password</button>
 		</form>
 
       <div class="footer">

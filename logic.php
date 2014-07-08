@@ -53,26 +53,30 @@ function randomWords($numWords, $inputString)
 {
 	global $words;
 	global $symbols;
+	$finalString = "";
+
 	for($i = 0; $i < $numWords; $i++)
 	{
-		echo trim($words[rand(0, (count($words) - 1))]);	
+		$finalString .= trim($words[rand(0, (count($words) - 1))]);	
 		if($i < ($numWords - 1))
 		{
-			echo "-";
+			$finalString .= "-";
 		}
 	}
 	if(array_key_exists("addNumber", $inputString))
 	{
-		echo rand(0, 9);
+		$finalString .=rand(0, 9);
 	}	
 	if(array_key_exists("addSymbol", $inputString))
 	{
-		echo $symbols[rand(0, 5)];
+		$finalString .=$symbols[rand(0, 5)];
 	}	
 	if(array_key_exists("addCapitalLetter", $inputString))
 	{
-		echo "";
+		$finalString = ucfirst($finalString);
 	}	
+
+	echo $finalString;
 }
 
 function testValues($inputString, $justWords=false)
