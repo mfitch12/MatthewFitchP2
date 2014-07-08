@@ -35,12 +35,22 @@ foreach ($words as $word_num => $word)
 }
 */
 
+function getPassword($inputString)
+{
+	
+}
+
 function randomWords($numWords)
 {
 	global $words;
 	for($i = 0; $i < $numWords; $i++)
 	{
-		echo $words[rand(0, (count($words) - 1))];
+		echo trim($words[rand(0, (count($words) - 1))]);	
+		if($i < ($numWords - 1))
+		{
+			echo "-";
+		}
 	}
 }
+
 ?>
